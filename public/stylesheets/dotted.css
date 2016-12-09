@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+
+.b-dotted-line {
+	display:block;
+	position:relative;
+	line-height:1.23;
+	letter-spacing:-1ex
+}
+.b-dotted-line__left,.b-dotted-line__right {
+	display:-moz-inline-box;
+	display:inline-block;
+	vertical-align:top;
+	letter-spacing:normal;
+	width:50%
+}
+.b-dotted-line__left {
+	vertical-align:top;
+	margin-right:-50%;
+	overflow:hidden
+}
+.b-dotted-line__right {
+	vertical-align:bottom;
+	margin-left:50%;
+	width:49%
+}
+.b-dotted-line__title {
+	display:inline;
+	padding-right:.3em
+}
+.b-dotted-line__title .b-tooltip {
+	margin-left:.3em;
+	vertical-align:middle
+}
+.b-dotted-line__line {
+	display:-moz-inline-box;
+	display:inline-block;
+	width:100%;
+	margin:0 -100% 0 0;
+	vertical-align:baseline;
+	border-bottom:1px dotted #ccc
+}
+.b-dotted-line__content {
+	margin-left:.3em;
+	display:block
+}
+.b-dotted-line__wrap {
+	display:block
+}
+.b-dotted-line__wrap .b-dotted-line {
+	margin:.7em 0
+}
+.b-dotted-line_line_bg .b-dotted-line__title {
+	background:#fff
+}
+.b-dotted-line_line_bg .b-dotted-line__left {
+	overflow:visible;
+	background:url("/resources/desktop.blocks/b-dotted-line/dotted-line-dot.gif") 0 100% repeat-x
+}
+.b-dotted-line_line_bg .b-dotted-line__line {
+	display:none
+}
+.b-dotted-line__wrap_properties .b-dotted-line {
+	margin-top:.7em;
+	margin-bottom:.7em
+}
+.b-dotted-line__wrap_properties .b-dotted-line__left {
+	width:16.3em;
+	margin-right:-16.3em
+}
+.b-dotted-line__wrap_properties .b-dotted-line__right {
+	width:auto;
+	margin-left:16.3em
+}
+.b-dotted-line__wrap_properties .b-dotted-line__content STRONG,.b-dotted-line__wrap_properties .b-dotted-line__content B {
+	font-weight:bold
+}
+.b-dotted-line__wrap_properties .b-dotted-line__content I,.b-dotted-line__wrap_properties .b-dotted-line__content EM {
+	font-style:italic
+}
+.b-dotted-line__wrap_punkt {
+	margin:.5em 0 1.2em;
+	display:block;
+	padding:1px 0
+}
+.b-dotted-line__wrap_punkt .b-dotted-line {
+	margin:0
+}
+.b-dotted-line__wrap_punkt .b-dotted-line+.b-dotted-line {
+	margin:.45em 0 0 0
+}
+.b-dotted-line__wrap_punkt .b-dotted-line__left {
+	width:80%
+}
+.b-dotted-line__wrap_punkt .b-dotted-line__right {
+	width:20%
+}
+.b-dotted-line__wrap_punkt .b-dotted-line__content {
+	margin-left:.5em
+}
