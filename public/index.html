@@ -36,9 +36,11 @@ Do the following if you're using your customized build of modernizr (http://www.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script type="text/javascript" src="javascripts/make_menu.js"></script>
     <script>
-    	$( document ).ready(function(){
-			$(".dropdown-button").dropdown({hover:true});
-			});
+    	/*$( document ).ready(function(){
+//			$(".dropdown-button").dropdown({hover:true});
+            console.log(MENU);
+            $('.menuContainer').prepend(MENU);
+			});*/
     </script>
 </head>
 <body>
@@ -54,6 +56,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 </div>
 
  <div class="menuContainer gridContainer">
+<!--
 <ul class="menu">
 	<li class="waves-block waves-light"><a  href="">Блютуз наушники</a>
 		<ul>
@@ -88,6 +91,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 
 </ul>
 
+-->
 
 </div>
 
@@ -363,7 +367,7 @@ PowerBeats 2 можно использовать в качестве гарни�
                     <div class="input-field col s12">
                     <i class="material-icons prefix">message</i>
                   <textarea required name="additional-info" id="textarea1" class="test-form-textarea materialize-textarea" placeholder="введите сюда то, с чем вы считаете, нам необходимо ознакомиться"></textarea>
-                    <label for="textarea1" style="font-size:12pt">Укажите дополнительную информацию<span style="color:red;font-weight:bold;">*</span></label>
+                    <label for="textarea1" class="label-additional-info" style="font-size:12pt">Укажите дополнительную информацию<span style="color:red;font-weight:bold;">*</span></label>
                     <!-- <p><span class="test-form-label" style="font-size:12pt">Укажите дополнительную информацию<span style="color:red;font-weight:bold;">*</span></span></p> -->
                    </div>
                    </div>

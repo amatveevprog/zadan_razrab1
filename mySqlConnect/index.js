@@ -1,32 +1,43 @@
 var mysql = require('mysql');
 var menuModule = require('./menu');
-var connection = mysql.createConnection({
+/*var connection = mysql.createConnection({
+ host:'localhost',
+ user:'default_user',
+ password:'root',
+ database:'default_user'
+ });*/
+var connectionSettings=
+{
     host:'localhost',
     user:'default_user',
     password:'root',
     database:'default_user'
-});
-connection.connect();
+};
+//connection.connect();
 function makeMenuRequest(callback)
 {
-
+    var connection = mysql.createConnection(connectionSettings);
+    connection.connect();
     connection.query("SELECT `id`,`parent_id`,`value` FROM menu",function(err,rows,fields){
         if(err){ callback(err);}
         else
         {
             var arr = menuModule.toArray(rows);
-            return callback(null,arr);
+            //return callback(null,arr);
             //var htmlString = menuModule.outputRecursive();
-            /*connection.end(function(err)
-            {
-                if(err){
-                    callback(err);
-                }
-                else
-                    //console.log("Disconnect");
-                    console.log(arr);
-                    return callback(null,arr);
-            });*/
+
+            callback(null,arr);
+            connection.end();
+            // connection.end(function(err)
+            // {
+            //     if(err){
+            //         callback(err);
+            //     }
+            //     else
+            //         //console.log("Disconnect");
+            //         console.log(arr);
+            //         return callback(null,arr);
+            // });
         }
 
     });
@@ -42,7 +53,8 @@ function makeQueryStringForCourierDelivery(obj2)
         "VALUES ('"+obj2['fio']+"','"+obj2['tel']+"','"+obj2['email']+"','"+obj2['additional-info']+"','"+obj2['additional-info2']+"','"+obj2['check_one']+"',"+(obj2['checkbox-latin']==='on')+",'"+obj2['Street']+"','"+obj2['House']+"','"+obj2['Gate']+"','"
         +obj2['Code']+"','"+obj2['Floor']+"','"+obj2['FlatNum']+"','"+obj2['corp']+"','"+obj2['additional-info-latin']+"')";
 }
-function makeQuery(connection,queryString,callback) {
+function makeQuery(queryString,callback) {
+    var connection = mysql.createConnection(connectionSettings);
     connection.connect();
     connection.query(queryString, function (err, result) {
         if (err) {
@@ -50,14 +62,15 @@ function makeQuery(connection,queryString,callback) {
         }
         else {
             console.log("result:" + result);
-            connection.end(function (err) {
+            callback(null,result);
+            connection.end();/*function (err) {
                 if (err) {
                     callback(err);
                 }
                 else
                     callback(null,result);
                     //console.log("Disconnect");
-            });
+            });*/
         }
     });
 }
@@ -73,9 +86,21 @@ exports.saveInDb = function(object,callback)
     {
         queryString=makeQueryStringForSelfExtract(object);
     }
-    makeQuery(connection,queryString,callback);
+    makeQuery(queryString,callback);
 };
 exports.getMenu = function(callback)
 {
     makeMenuRequest(callback);
 };
+/*
+exports.closeConnection(callback)
+{
+    connection.end(function (err) {
+        if (err) {
+            callback(err);
+        }
+        else
+            callback(null,result);
+        console.log("Disconnected from DB!");
+    });
+}*/

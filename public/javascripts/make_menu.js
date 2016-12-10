@@ -43,7 +43,8 @@ window.onload = function () {
         {
             var menu = JSON.parse(xhr.responseText);
             menu = createMenu(menu);
-            console.log(menu);
+            $(".menuContainer").prepend(menu);
+            //console.log(menu);
             //console.log(menu);
 
             /*

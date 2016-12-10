@@ -285,12 +285,23 @@ font-weight: 700;
 #footer{}
 .zeroMargin_mobile{margin-left: 0;}
 .hide_mobile{display: none;}
-}
 
+.label-additional-info
+{
+	margin-top: 1em !important;
+	position: relative;
+	font-size:10pt !important;
+	//background: red;
+}
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 
 @media only screen and (min-width: 481px) {
-
+	.label-additional-info
+	{
+		//margin-top: 200px;
+		position: relative;
+		font-size:12pt !important;
+	}
 .gridContainer {
 	width: 88.35%;
 	padding-left: 2.325%;
@@ -591,4 +602,8 @@ letter-spacing: 0.5px;
 	.required::-moz-placeholder          {color:#C0392B!important;}/* Firefox 19+ */
 	.required:-moz-placeholder           {color:#c0392b!important;}/* Firefox 18- */
 	.required:-ms-input-placeholder      {color:#c0392b!important;}
+	.label-additional-info
+	{
+		margin-top: 0px;
+	}
 }

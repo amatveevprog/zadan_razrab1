@@ -36,7 +36,7 @@ app.post('/handler',function (req,res,next) {
      }
      else
      {
-       res.status(200).json(result);
+       res.status(200).json(req.body);
        res.end();
      }
    });
