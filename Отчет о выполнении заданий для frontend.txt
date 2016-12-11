@@ -22,5 +22,4 @@ var connectionSettings=
     database:'default_user'
 };
 
-Файлы БД во вложении письма. 
 
