@@ -1,12 +1,20 @@
 function display_delivery(option) {
-    $(.required).value='default';
+    var obj = $(".required");
     if(option=="самовывоз")
     {
+        for (var key in obj)
+        {
+            obj[key].value='default_value_off';
+        }
         display_self_carry();
         return;
     }
     else
     {
+        for (var key in obj)
+        {
+            obj[key].value='';
+        }
         display_courier();
     }
 }
