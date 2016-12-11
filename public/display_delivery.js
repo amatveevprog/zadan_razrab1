@@ -1,4 +1,5 @@
 function display_delivery(option) {
+    $(.required).value='default';
     if(option=="самовывоз")
     {
         display_self_carry();
